@@ -1,0 +1,24 @@
+<h2>Category</h2>
+<table class="table">
+   <tr>
+     <th colspan="6" class="text-center">
+       <a routerLink="../addcat" class="btn btn-danger">Add Category</a>
+      </th>
+   </tr>
+   <tr>
+     <th>S.No</th>
+     <th>Category</th>
+     <th>Description</th>
+     <th>Image</th>
+     <th>Date/time</th>
+     <th>Action</th>
+   </tr>
+   <tr *ngFor="let c of catData; let i=index">
+      <th>{{i+1}}</th>
+      <th>{{c.category}}</th>
+      <th>{{c.description}}</th>
+      <th><img src="http://localhost:8899/myimages/{{c.image}}" width=50 height=50/></th>
+      <th>{{c.cur_date|date}}</th>
+      <th><a href="javascript:void()" (click)="delCat(c._id)" class="btn btn-danger">Delete</a></th>
+    </tr>
+</table>
